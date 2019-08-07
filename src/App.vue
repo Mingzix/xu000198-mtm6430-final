@@ -26,7 +26,11 @@ export default {
   //create click action step 2
   //add action log out step 6:
   methods: {
-    ...mapActions(["clearError", "logout"])
+    //add auto log in step 2
+    ...mapActions(["clearError", "logout", "autoLogin"])
+  },
+  created() {
+    this.autoLogin();
   }
 };
 </script>

@@ -22,7 +22,16 @@ export default new Router({
     {
       path: "/signin",
       name: "signin",
-      component: SignIn
+      component: SignIn,
+      //Navigation Guard step 2
+      //when the user didn't sign in ,when click the dashboard ,it will trabsfer to the sign in page.
+      beforeEnter(to, from, next) {
+        if (!store.state.idToken) {
+          next();
+        } else {
+          next("/dashboard");
+        }
+      }
     },
     {
       path: "/signup",
