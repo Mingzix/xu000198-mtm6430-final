@@ -7,6 +7,18 @@
         <input type="text" v-model="name" id="name" requried>
       </div>
       <div>
+        <label for="age">Age</label>
+        <input type="number" v-model="age" id="age" requried>
+      </div>
+      <div>
+        <label for="city">City</label>
+        <input type="text" v-model="city" id="city" requried>
+      </div>
+      <div>
+        <label for="job">Job</label>
+        <input type="text" v-model="job" id="job" requried>
+      </div>
+      <div>
         <label for="email">Email</label>
         <input type="email" v-model="email" id="email" requried>
       </div>
@@ -24,6 +36,9 @@ export default {
   data() {
     return {
       name: "",
+      age: "",
+      city: "",
+      job: "",
       email: "",
       pass: ""
     };
@@ -34,6 +49,9 @@ export default {
     onSubmit() {
       const formData = {
         name: this.name,
+        age: this.age,
+        city: this.city,
+        job: this.job,
         email: this.email,
         password: this.pass
       };

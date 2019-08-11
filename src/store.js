@@ -43,7 +43,7 @@ export default new Vuex.Store({
         .post(
           //complete the url with axios-auth.js
           //accounts:signUp?key=[API_KEY]
-          "accounts:signUp?key=AIzaSyCArkd4uepay2eVAqzZxrXhTa-1GX5LVHc",
+          "accounts:signUp?key=AIzaSyC4OQWUAnE6LXYPid4gj7Kbwmjjt5Uv5fk",
           {
             email: authData.email,
             password: authData.password,
@@ -89,7 +89,7 @@ export default new Vuex.Store({
     signIn({ commit }, authData) {
       axiosAuth
         .post(
-          "accounts:signInWithPassword?key=AIzaSyCArkd4uepay2eVAqzZxrXhTa-1GX5LVHc",
+          "accounts:signInWithPassword?key=AIzaSyC4OQWUAnE6LXYPid4gj7Kbwmjjt5Uv5fk",
           {
             email: authData.email,
             password: authData.password,
@@ -165,7 +165,7 @@ export default new Vuex.Store({
       }
       globalAxios
         .post(
-          "https://mingzi-week-12-ed87a.firebaseio.com/users.json" +
+          "https://xu000198-mtm6430-final.firebaseio.com/users.json" +
             "?auth=" +
             state.idToken,
           userData
@@ -180,7 +180,7 @@ export default new Vuex.Store({
       }
       globalAxios
         .get(
-          "https://mingzi-week-12-ed87a.firebaseio.com/users.json" +
+          "https://xu000198-mtm6430-final.firebaseio.com/users.json" +
             "?auth=" +
             state.idToken
         )
@@ -201,12 +201,17 @@ export default new Vuex.Store({
       //define which to patch, go to the perticular user
       globalAxios
         .patch(
-          "https://mingzi-week-12-ed87a.firebaseio.com/users/" +
+          "https://xu000198-mtm6430-final.firebaseio.com/users/" +
             state.user.id +
             ".json" +
             "?auth=" +
             state.idToken,
-          { name: state.user.name }
+          {
+            name: state.user.name,
+            age: state.user.age,
+            city: state.user.city,
+            job: state.user.job
+          }
           //multi edits:  { name: state.user.name, email: state.user.email }
         )
         .then(res => console.log(res))

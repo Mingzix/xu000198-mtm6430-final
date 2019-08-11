@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>State Manager</h1>
     <div id="nav">
       <router-link :to="{ name: 'home' }">Home</router-link>
       <router-link v-if="!auth" :to="{ name: 'signup' }">Sign Up</router-link>
@@ -44,9 +45,15 @@ export default {
   max-width: 1024px;
   margin: 0 auto;
 }
-
+h1 {
+  margin: 0 auto;
+  text-align: center;
+}
 #nav {
   padding: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 #nav a {
@@ -63,7 +70,9 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-
+p {
+  text-align: center;
+}
 .error {
   background-color: rosybrown;
   padding: 20px;
