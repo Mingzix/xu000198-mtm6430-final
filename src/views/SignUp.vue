@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="content">
     <h1>Sign Up</h1>
     <form @submit.prevent="onSubmit">
       <div>
@@ -75,9 +75,16 @@ label {
   display: block;
 }
 
-input,
-button {
+input {
   padding: 5px 10px;
   margin: 5px 0;
+}
+button {
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: rgb(211, 211, 211);
+  display: flex;
+  justify-content: center;
 }
 </style>

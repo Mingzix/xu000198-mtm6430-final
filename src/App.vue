@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <h1>State Manager</h1>
-    <div id="nav">
-      <router-link :to="{ name: 'home' }">Home</router-link>
-      <router-link v-if="!auth" :to="{ name: 'signup' }">Sign Up</router-link>
-      <router-link v-if="!auth" :to="{ name: 'signin' }">Sign In</router-link>
-      <router-link v-if="auth" :to="{ name: 'dashboard' }">Dashboard</router-link>
-      <!---add action log out step 5: call the action--->
-      <a v-if="auth" class="logout" @click="logout">Log out</a>
+    <div class="heading">
+      <h1>State Manager</h1>
+      <div id="nav">
+        <router-link :to="{ name: 'home' }">Home</router-link>
+        <router-link v-if="!auth" :to="{ name: 'signup' }">Sign Up</router-link>
+        <router-link v-if="!auth" :to="{ name: 'signin' }">Sign In</router-link>
+        <router-link v-if="auth" :to="{ name: 'dashboard' }">Dashboard</router-link>
+        <!---add action log out step 5: call the action--->
+        <a v-if="auth" class="logout" @click="logout">Log out</a>
+      </div>
     </div>
     <!--create click action step 1--->
     <div v-if="error" @click="clearError" class="error">{{ error }}</div>
     <router-view/>
+    <footer>
+      <p>Copyright ©Mingzi Xu</p>
+    </footer>
   </div>
 </template>
 <script>
@@ -37,6 +42,17 @@ export default {
 </script>
 
 <style>
+.heading {
+  background-color: beige;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  align-items: baseline;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -50,7 +66,6 @@ h1 {
   text-align: center;
 }
 #nav {
-  padding: 30px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -59,7 +74,6 @@ h1 {
 #nav a {
   font-weight: bold;
   color: #2c3e50;
-  border-right: 1px solid;
   padding: 0 10px;
 }
 
@@ -76,5 +90,13 @@ p {
 .error {
   background-color: rosybrown;
   padding: 20px;
+}
+
+footer {
+  background-color: beige;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 </style>

@@ -1,8 +1,12 @@
 <template>
-  <div>
+  <div id="content">
     <h1>Dashboard</h1>
-    <p>Welcome to your dashboard</p>
-    <p>your login email is {{user.email}}</p>
+    <p>
+      Hello! {{user.name}}.
+      <br>Welcome to your Dashboard
+      <br>
+      your have loged in with your email {{user.email}}
+    </p>
     <!---create form for edit the user's name - step 1---->
     <form @submit.prevent="submitForm">
       <p>Edit your profile</p>
@@ -23,7 +27,7 @@
         <input type="text" id="job" v-model="user.job">
       </div>
       <br>
-      <input type="submit" value="Submit">
+      <input class="resub" type="submit" value="Save">
     </form>
   </div>
 </template>
@@ -59,5 +63,15 @@ export default {
   }
 };
 </script>
+<style>
+.resub {
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: rgb(211, 211, 211);
+  display: flex;
+  justify-content: center;
+}
+</style>
 
 

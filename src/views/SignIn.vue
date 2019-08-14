@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="content">
     <h1>Sign In</h1>
     <form @submit.prevent="onSubmit">
       <div>
@@ -11,7 +11,7 @@
         <input type="password" v-model="pass" id="pass" requried>
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit">Sign in</button>
     </form>
   </div>
 </template>
@@ -39,20 +39,38 @@ export default {
 
 <style>
 form {
+  border-radius: 10px;
   padding: 20px;
-  background: lemonchiffon;
-  box-shadow: -2px 2px 6px;
-  max-width: 400px;
+  background: white;
+  box-shadow: 0px 0px 10px rgb(206, 206, 206);
+  max-width: 300px;
   margin: 0 auto;
 }
-
+form div {
+  display: flex;
+  justify-content: space-around;
+}
 label {
+  width: 100px;
   display: block;
 }
 
-input,
-button {
+input {
   padding: 5px 10px;
   margin: 5px 0;
+}
+#content h1 {
+  padding: 20px 0;
+}
+#content {
+  padding-top: 100px;
+}
+button {
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: rgb(211, 211, 211);
+  display: flex;
+  justify-content: center;
 }
 </style>
